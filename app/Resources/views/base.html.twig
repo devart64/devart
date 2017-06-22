@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}dév'art développeur web freelance{% endblock %}</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <link  rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <link rel="stylesheet" id="css-preset" href="{{ asset('css/presets/preset1.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}" />
+    </head>
+    <body>
+
+    <!--.preloader
+    <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+    /.preloader-->
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCX5GwNM95FWiq5xoZCpGrLJD6WQBMmCkI"></script>
+            <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+            <script type="text/javascript" src="js/wow.min.js"></script>
+            <script type="text/javascript" src="{{ asset('js/mousescroll.js') }}"></script>
+            <script type="text/javascript" src="js/smoothscroll.js"></script>
+            <script type="text/javascript" src="js/jquery.countTo.js"></script>
+            <script type="text/javascript" src="js/lightbox.min.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
+        {% endblock %}
+
+
+    </body>
+</html>
