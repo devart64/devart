@@ -119,6 +119,16 @@ jQuery(function($) {
 		$("#portfolio-single").slideUp(500);
 	});
 
+	/* ========================================================================= */
+	/*	Twitter Feed
+	 /* ========================================================================= */
+
+    $(".tweet").twittie({
+        dateFormat: "%b. %d, %Y",
+        template: "{{tweet}}",
+        count: 1
+    });
+
 	// Contact form
 	var form = $('#main-contact-form');
 	form.submit(function(event){
@@ -134,13 +144,14 @@ jQuery(function($) {
 		});
 	});
 
+
 	//Google Map
 	var latitude = $('#google-map').data('latitude')
 	var longitude = $('#google-map').data('longitude')
 	function initialize_map() {
 		var myLatlng = new google.maps.LatLng(latitude,longitude);
 		var mapOptions = {
-			zoom: 14,
+			zoom: 12,
 			scrollwheel: false,
 			center: myLatlng
 		};
@@ -151,13 +162,29 @@ jQuery(function($) {
 		});
 		var marker = new google.maps.Marker({
 			position: myLatlng,
-			map: map
+			map: map,
+            icon: 'images/location-icon.png',
+            title: "devart"
 		});
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.open(map,marker);
 		});
 	}
 	google.maps.event.addDomListener(window, 'load', initialize_map);
-	
-});
 
+});
+(function($) {
+    $(document).ready(function(){
+//Skill
+jQuery('.skillbar').each(function() {
+    jQuery(this).appear(function() {
+        jQuery(this).find('.count-bar').animate({
+            width:jQuery(this).attr('data-percent')
+        },3000);
+        var percent = jQuery(this).attr('data-percent');
+        jQuery(this).find('.count').html('<span>' + percent + '</span>');
+    });
+
+});
+    });
+})(jQuery);
